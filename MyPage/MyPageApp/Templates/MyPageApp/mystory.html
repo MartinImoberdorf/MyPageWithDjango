@@ -1,0 +1,72 @@
+{% extends "MyPageApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<section>
+    <article class="MyStory" data-aos="fade-up">
+        <h1>How my life change...</h1>
+        <div class="MyStory-div">
+            I always liked and will like video games, you could say that when I was a kid I spent hours and hours in them. If I think I can say that I played 20 hours a week. Besides of the fights or complaints from my parents for playing so much and not to do anything else, in my defense I can say that I have always approved all the school subjects and not go to school in summer. <br>
+            <br>
+            I remember that my favorite game that I bought every year was the famous game of football called FIFA, it was a game that play more every year and where I spent a lot of money buying the new one; but one day I do not forget, was that everything changed me , I remember I was in the middle of a game and my dad shows up and he sit on the back sofa, as every child thought it was to see me play and I showed him how good was in that game, but what he told me was all otherwise, he told me "with all the time you spend in those games you've already had learned how to program it, how to make them or even better more", got up and He's gone. I heard it, and nodded but kept playing.<br>
+            <br>
+            When the night came that phrase was still in my head and then I decided to search on the internet, especially on You Tube and that's where my first language of programming appeared, that was Java a video of <span>La Geekipedia De Ernesto</span> , I remember watching a single chapter that night and then I went to sleep. <br>
+            <br>
+            As the days went by I watched one video per day and over time the hours that used to play video games increasein programming. Everything I saw, It was more and more passionate for me. Over time I learned <span>Python</span> , <span>Unity with C#</span> ,<span>HTML</span> , <span>CSS</span> , <span>SQL</span> , among other topics and aspects related to the programming. Sometimes I look at everything I've learned and done and observe a big nice change in my life.
+            <br><br>
+        </div>
+            <b>2/11/2019</b>  
+    </article>
+</section>
+
+
+<style>
+
+/* ---------------------------------------------------------------*/
+/*SECTION MY STORY */
+/* ---------------------------------------------------------------*/
+
+.MyStory{
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 125px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.MyStory h1 {
+    font-size: 5vh;
+    color: #30E115;
+    padding: 10px;
+    font-family: 'Lobster', cursive;
+}
+
+.MyStory-div{
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+}
+.MyStory span:hover{
+    color: #30E115;
+}
+.MyStory-div b{
+    text-align: center !important;
+}
+
+.MyStory{
+    padding: 20px;
+    text-align: center;
+    font-size: 2.7vh;
+    color: #fff;
+}
+@media (max-width:950px){
+    .MyStory-div{
+        width: 100%;
+    }
+    
+}
+</style>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "MyPageApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Athiti:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
+
+<h1 class="title">My Certificates</h1>
+    
+<div class="container">
+    {% for achievement in achievements %}
+    <div class="card">
+        <img src="{{achievement.imagen.url}}" alt="">
+        <h4>{{achievement.titulo}}</h4>
+        <p>{{achievement.contenido}}</p>
+        <a href="{{achievement.imagen.url}}" target="_blank">CERTIFICATE</a>
+    </div> 
+    {% endfor %}
+</div>
+
+<style>
+    
+body{
+    background: url("{% static 'MyPageApp/Imgs/Achievements.gif' %}");
+}
+.title{
+    text-align: center;
+    font-size: 7.5vh;
+    margin-top: 100px;
+    font-weight: 100;
+    color:white;
+    font-family: 'Catamaran', sans-serif;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:auto;
+    margin-bottom: 125px;
+}
+
+.container .card{
+    width: 330px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px transparent;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    border: 1px solid transparent;
+}
+
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px #00FF1B;
+}
+
+.container .card img{
+    width: 330px;
+    height: 220px;
+}
+
+.container .card h4{
+    font-weight:600;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    color:white;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.container .card p{
+    padding: 15px 1rem;
+    font-size: 13px;
+    font-weight: 300;
+    color:white;
+    font-family: 'Athiti', sans-serif;
+}
+
+.container .card a{
+    font-weight: 500;
+    text-decoration: none;
+    color: #00FF1B;
+    font-family: 'Signika', sans-serif;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.container .card a:hover{
+    border: 1px solid #00FF1B;
+    
+}
+
+</style>
+{% endblock %}

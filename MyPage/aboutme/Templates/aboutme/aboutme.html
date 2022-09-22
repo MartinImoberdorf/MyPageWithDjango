@@ -1,0 +1,264 @@
+{% extends "MyPageApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'aboutme/css/style.css' %}" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+<section class="about">
+    <div class="main">
+        <img src="{% static 'MyPageApp/Imgs/11.png' %}" id='img-me'alt="">
+        <div class="about-text">
+            <h1>MARTIN JOSE IMOBERDORF</h1>
+            <p>
+                Hi! my name is Martín José Imoberdorf, I'm 19 years old and studying systems engineering. 
+                I'm a person who is passionate about technology, where with that I learned about the world of programming, from Python to web pages with HTML5. 
+                In my free time, I develop games with Unity with C#. Today, I’m started in the world of cybersecurity.
+            </p>
+        </div>
+
+</section>
+
+
+<div id="deco-sep"></div>
+
+
+<section class="today">
+    <h1>My Video Games</h1>
+    <div class="container">
+        {% for aboutme in aboutme %}
+        <div class="card">
+            <img src="{{aboutme.imagen.url}}" alt="">
+            <p>{{aboutme.contenido}}</p>
+            <button class="boton-download" style="margin-top: 10px;"><a  href="{{aboutme.descarga.url}}" download class="a-boton-download">DOWNLOAD</a></button>
+        </div> 
+        {% endfor %}
+        <h3 class="masDe3">More on Linkedin . . .</h3>
+    </div> 
+</section>
+
+<script src="{% static 'aboutme/js/main.js' %}" ></script>
+
+ 
+<style>
+
+#deco-sep{
+    height: 225px;
+    background: url("{% static 'MyPageApp/Imgs/aboutmeBanner.png' %}");
+}
+
+
+.img-deco{
+    margin-bottom: 150px;
+}
+
+.about{
+    width: 100%;
+    padding: 78px 0;
+    background: #000;
+}
+.about img{
+    height: auto;
+    width: 500px;
+    border-radius: 50px;
+    padding: 20px;
+}
+.about-text{
+    width: 50%;
+    margin-top: 150px;
+    background: url("{% static 'MyPageApp/Imgs/1.png' %}");
+}
+.main{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+.about-text h1{
+    color: white;
+    font-size: 4vh;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+    animation: example 5s ease-in-out infinite;
+}
+
+.about-text p{
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 2.2vh;
+    text-align: justify;
+    padding: 20px;
+}
+@media screen and (max-width:800px){
+    .main{
+        display: block;
+        background: url("{% static 'MyPageApp/Imgs/AboutMeBackground.jpg' %}");
+        background-size: cover;
+        align-content: center;
+    }
+    .about-text{
+        width: 100%;
+        margin-top: 0;
+    }
+    h1{
+        text-align: center;  
+    }
+    .about-text h1{
+        font-size: 3vh;
+    }
+    #img-me{
+        align-content: center;  
+    }
+}
+
+
+
+
+
+.img-fot{
+    width: 100%;
+}
+
+.today{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+.today h1{
+    color: white;
+    font-size: 5em;
+    text-transform: capitalize;
+    font-weight: 100;
+    padding: 25px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+.container{
+    width: 100%;
+    max-height:1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5cm;
+    margin: auto;
+}
+
+.container .card{
+    width: 380px;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    border: 0.1px solid #130808;
+}
+
+
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px #00FF1B;
+}
+
+.container .card img{
+    width: 380px;
+    height: 250px;
+}
+
+.container .card h4{
+    font-weight:600;
+    font-size: 2vh;
+    color:white
+}
+
+.container .card p{
+    padding: 5px;
+    font-size: 1.5vh;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-align: center;
+    color:white;
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 25px;
+}
+
+
+.masDe3{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    margin-top: 100px;
+}
+
+.boton-download{
+    padding: 0; border: none; background: none;
+}
+
+.boton-download:hover{
+    border: 1px solid #00FF1B;
+    border-radius: 10px;
+}
+
+.a-boton-download{
+    color: #00FF1B;
+    border-color: #000;
+    text-decoration: none;
+    font-size: 1.5vh;
+    padding: 15px;
+    font-family: 'Secular One', sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+@media screen and (max-width:800px){
+    .container .card{
+        width: 280px;
+        height: 250px;
+    }
+    .container .card img{
+        width: 280px;
+        height: 150px;
+    }
+    .today h1{
+        font-size: 2em;
+    }
+}
+
+
+@keyframes example {
+0%{
+      opacity: 0;
+  }
+  30%{
+    opacity: 10;
+  }
+  50%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 10;
+  }
+}
+
+
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "MyPageApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'home/css/style.css' %}" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+<!-- 
+<div class="preloader">
+    <div class="wawy">
+        <span style="--i:1;">L</span>
+        <span style="--i:2;">o</span>
+        <span style="--i:3;">a</span>
+        <span style="--i:4;">d</span>
+        <span style="--i:5;">i</span>
+        <span style="--i:6;">n</span>
+        <span style="--i:7;">g</span>
+        <span style="--i:8;">.</span>
+        <span style="--i:9;">.</span>
+        <span style="--i:10;">.</span>
+    </div>
+</div> 
+-->
+
+<div class="title">
+    <span class="Typed" ></span>
+</div>
+
+
+
+<div>
+    <img src="{% static 'MyPageApp/Imgs/fondoMain.gif' %}" alt="">
+</div>
+
+
+
+
+<div id="separador"> 
+    <div class="frase">
+        <h1>Hello World</h1>
+    </div>
+</div>
+
+<div class="div-Iam">
+    <p class="letters">
+        <span>I</span>
+        <span>'</span>
+        <span>M</span> 
+        <span  id='img-home'><img src="{% static 'MyPageApp/Imgs/homeCode.gif' %}" alt=""></span> 
+    </p>
+    <p class="letters">
+        <span>M</span>
+        <span>A</span>
+        <span>R</span>
+        <span>T</span>
+        <span>I</span>
+        <span>N</span>
+    </p>
+    <p class="letters">
+        <span>I</span>
+        <span>M</span>
+        <span>O</span>
+        <span>B</span>
+        <span>E</span>
+        <span>R</span>
+        <span>D</span>
+        <span>O</span>
+        <span>R</span>
+        <span>F</span>
+    </p>
+</div>
+
+
+
+
+
+{% for home in home %}
+    <img src="{{home.imagen.url}}" alt=""  width="35px">
+{% endfor %}
+
+
+
+
+<script src="{% static 'home/js/main.js' %}" ></script>
+<script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+
+{% endblock %}

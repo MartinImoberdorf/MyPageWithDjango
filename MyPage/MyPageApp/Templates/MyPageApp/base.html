@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    {% load static %}
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="Imoberdorf,Martín José,Imober,ILCapo,Porfolio">
+    <meta name="description" content="Porfolio created by Martín José Imoberdorf as proof of what I learned and experienced." >
+    <meta name="autor" content="Imoberdorf Martín José">
+    <meta name="copyright" content="Imoberdorf Martín José">
+    <link rel="icon" href="{% static 'MyPageApp/Imgs/Logo.png' %}" type="image/png" sizes="144x144">
+    <title>Martín José Imoberdorf</title>
+    
+    <!--Iconos-->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Lobster&family=Oswald&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Lobster&family=Oswald&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="{% static 'MyPageApp/css/normalize.css' %}" rel="stylesheet">
+    <link href="{% static 'MyPageApp/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <header>
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu"><img src="{% static 'MyPageApp/Imgs/Bur.png' %}" alt=""></label>
+        <nav class="menu">
+            <ul>
+                <li><a href="{% url 'AboutMe' %}">About Me</a></li>
+                <li><a href="{% url 'MyStory' %}">My Story</a></li>
+                <li><a href="{% url 'Home' %}">Home</a></li>
+                <li><a href="{% url 'Achievements' %}">Achievements</a></li>
+                <li><a href="{% url 'Opinions' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    {% block content %}{% endblock %}
+
+    <footer class="pie-pagina" >
+        <div class="grupo-1">
+            <div class="box">
+                <figure id="img-float">
+                        <img src="{% static 'MyPageApp/Imgs/avatar.png' %}">
+                </figure>
+            </div>
+            <div class="box">
+                <h2></h2>
+                <ul>
+                    <li><button class="button-footer"><a class="menu_items" href="{% url 'AboutMe' %}">About Me</a></button></li>
+                    <li><button class="button-footer"><a class="menu_items" href="{% url 'MyStory' %}">My Story</a></button></li>
+                    <li><button class="button-footer"><a class="menu_items" href="{% url 'Home' %}">Home</a></button></li>
+                    <li><button class="button-footer"><a class="menu_items" href="{% url 'Achievements' %}">Achievements</a></button></li>
+                    <li><button class="button-footer"><a class="menu_items" href="{% url 'Opinions' %}">Contact</a></button></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>CONTACT</h2>
+                <div class="red-social">
+                    <a href="https://github.com/MartinImoberdorf" target="_blank" class="fab fa-github"></a>
+                    <a href="https://www.linkedin.com/in/martin-jos%C3%A9-imoberdorf-844886202/" target="_blank" class="fab fa-linkedin-in"></a>
+                    <a href="https://www.instagram.com/tinchoimo/?hl=es" target="_blank" class="fab fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 Imoberdorf Martín José</small>
+        </div>
+    </footer>
+   
+<!--Librería animación Maquina de Escribir-->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="{% static 'MyPageApp/js/home.js' %}" ></script>
+
+<!--Librería animación scroll-->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+    const $preloader=document.getElementById('loading');
+</script>
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+

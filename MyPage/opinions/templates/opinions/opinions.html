@@ -1,0 +1,166 @@
+{% extends "MyPageApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
+    
+    
+    
+    
+<section class="contact">
+    <div class="contact__right-side">
+        <h1 class="contact__title">Contact me</h1>
+        <form action="" method="POST" class="contact__form-wrapper">
+            {% csrf_token %}
+            <div class="contact__input-line">
+                <label for="name" class="contact__label">Name</label>
+                <input type="text" name="nombre" id="name" class="contact__input" autocomplete="off" required>
+            </div>
+            <div class="contact__input-line">
+                <label for="email" class="contact__label">Email</label>
+                <input type="email" name="email" id="email" class="contact__input" autocomplete="off" required>
+            </div>
+            <div class="contact__input-line">
+                <label for="message" class="contact__label">Message</label>
+                <textarea type="text" name="mensaje" id="message" class="contact__input--textarea" autocomplete="off" required></textarea>
+            </div>
+            <input type="submit" value="Send message" class="contact__submit-button">
+            <div class="contenedorFormulario">
+                {% if "valido" in request.GET %}
+                    <p class="checkDeEnvio">Información enviada correctamente, gracias!</p>
+                {% endif %}
+                {% if "novalido" in request.GET %}
+                    <p class="checkDeEnvio">Error, intentar de nuevo!</p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</section>
+
+<style>
+
+.contact{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #00FF1B;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: url("{% static 'MyPageApp/Imgs/Contact.gif' %}");
+}
+        
+        
+        
+.contact__right-side{
+    padding: 100px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding:0 7.3% 0 4.7%;
+    width: 50%;
+}
+        
+.contact__title{
+    font-size: 8vh;
+    width: 100%;
+    font-weight: 1000;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    text-align: center;
+}
+        
+.contact__form-wrapper, .contact__input-line{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+        
+.contact__input-line{
+    margin-bottom: 45px;
+}
+        
+.contact__label{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+        
+.contact__input{
+    height: 30px;
+    outline: none;
+    padding: 5px 0;
+    border-bottom: 2px solid #00FF1B;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    color: #00FF1B;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+}
+    
+.contact__input--textarea{
+    height: 100px;
+    outline: none;
+    padding: 5px 0;
+    border-bottom: 2px solid #00FF1B;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    color: #00FF1B;
+    resize: none;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+}
+        
+.contact__submit-button{
+    padding: 18px 55px;
+    background-color: #050e14;
+    border-radius: 50px;
+    color: #00FF1B;
+    font-weight: 600;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+        
+.contact__submit-button:hover{
+    border:1px solid #00FF1B;
+}  
+  
+.checkDeEnvio{
+    color: #ff0000; 
+    padding-top: 20px; 
+    font-family: 'Courier New', Courier, monospace;
+}  
+
+@media (max-width:1024px){
+    .contact__title{
+    font-size: 5vh;
+    }
+}
+
+
+@media (max-width:950px){
+    .contact__right-side
+    {
+        width: 100%;
+    }
+}
+
+    
+    
+</style>
+    
+
+    
+{% endblock %}
+
